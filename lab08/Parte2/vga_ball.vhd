@@ -319,7 +319,13 @@ begin  -- comportamento
                              line_enable    <= '1';
                              col_rstn       <= '1';
                              col_enable     <= '1';
-                             we             <= '1';
+									  
+									  if (col = pos_x) and (line = pos_y) then
+										we             <= '1';
+									  else 
+										we             <= '0';
+									  end if;
+									  
                              timer_rstn     <= '0'; 
                              timer_enable   <= '0';
 
