@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_ball
-Tue May 15 22:02:58 2018
+Tue May 15 22:53:37 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -57,13 +57,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 15 22:02:58 2018       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 15 22:53:37 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; vga_ball                                    ;
 ; Top-level Entity Name           ; vga_ball                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 104                                         ;
+; Total registers                 ; 105                                         ;
 ; Total pins                      ; 31                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 36,864                                      ;
@@ -218,16 +218,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 142            ;
+; Estimate of Logic utilization (ALMs needed) ; 143            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 259            ;
+; Combinational ALUT usage for logic          ; 260            ;
 ;     -- 7 input functions                    ; 1              ;
 ;     -- 6 input functions                    ; 21             ;
 ;     -- 5 input functions                    ; 23             ;
-;     -- 4 input functions                    ; 35             ;
-;     -- <=3 input functions                  ; 179            ;
+;     -- 4 input functions                    ; 37             ;
+;     -- <=3 input functions                  ; 178            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 104            ;
+; Dedicated logic registers                   ; 105            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 31             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -239,8 +239,8 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 70             ;
-; Total fan-out                               ; 1347           ;
+; Maximum fan-out                             ; 71             ;
+; Total fan-out                               ; 1353           ;
 ; Average fan-out                             ; 3.12           ;
 +---------------------------------------------+----------------+
 
@@ -250,7 +250,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |vga_ball                                    ; 259 (89)            ; 104 (63)                  ; 36864             ; 0          ; 31   ; 0            ; |vga_ball                                                                                                                          ; vga_ball            ; work         ;
+; |vga_ball                                    ; 260 (90)            ; 105 (64)                  ; 36864             ; 0          ; 31   ; 0            ; |vga_ball                                                                                                                          ; vga_ball            ; work         ;
 ;    |vgacon:vga_controller|                   ; 170 (43)            ; 41 (40)                   ; 36864             ; 0          ; 0    ; 0            ; |vga_ball|vgacon:vga_controller                                                                                                    ; vgacon              ; work         ;
 ;       |dual_clock_ram:vgamem|                ; 2 (0)               ; 1 (0)                     ; 36864             ; 0          ; 0    ; 0            ; |vga_ball|vgacon:vga_controller|dual_clock_ram:vgamem                                                                              ; dual_clock_ram      ; work         ;
 ;          |altsyncram:ram_block_rtl_0|        ; 2 (0)               ; 1 (0)                     ; 36864             ; 0          ; 0    ; 0            ; |vga_ball|vgacon:vga_controller|dual_clock_ram:vgamem|altsyncram:ram_block_rtl_0                                                   ; altsyncram          ; work         ;
@@ -281,26 +281,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------+
-; State Machine - |vga_ball|estado                                                                        ;
-+------------------------+------------------+------------------------+--------------------+---------------+
-; Name                   ; estado.move_bola ; estado.constroi_quadro ; estado.show_splash ; estado.inicio ;
-+------------------------+------------------+------------------------+--------------------+---------------+
-; estado.inicio          ; 0                ; 0                      ; 0                  ; 0             ;
-; estado.show_splash     ; 0                ; 0                      ; 1                  ; 1             ;
-; estado.constroi_quadro ; 0                ; 1                      ; 0                  ; 1             ;
-; estado.move_bola       ; 1                ; 0                      ; 0                  ; 1             ;
-+------------------------+------------------+------------------------+--------------------+---------------+
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |vga_ball|estado                                                                                       ;
++------------------------+--------------------+------------------+------------------------+---------------+--------------+
+; Name                   ; estado.show_splash ; estado.move_bola ; estado.constroi_quadro ; estado.inicio ; estado.clear ;
++------------------------+--------------------+------------------+------------------------+---------------+--------------+
+; estado.clear           ; 0                  ; 0                ; 0                      ; 0             ; 0            ;
+; estado.inicio          ; 0                  ; 0                ; 0                      ; 1             ; 1            ;
+; estado.constroi_quadro ; 0                  ; 0                ; 1                      ; 0             ; 1            ;
+; estado.move_bola       ; 0                  ; 1                ; 0                      ; 0             ; 1            ;
+; estado.show_splash     ; 1                  ; 0                ; 0                      ; 0             ; 1            ;
++------------------------+--------------------+------------------+------------------------+---------------+--------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; estado.show_splash                    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
-+---------------------------------------+----------------------------------------+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; estado.show_splash                    ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -308,12 +309,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 104   ;
+; Total registers                              ; 105   ;
 ; Number of registers using Synchronous Clear  ; 41    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 52    ;
+; Number of registers using Asynchronous Clear ; 53    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Clock Enable       ; 44    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -344,8 +345,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |vga_ball|pos_x[6]         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |vga_ball|pos_y[1]         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |vga_ball|pos_x[5]         ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |vga_ball|pos_y[6]         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -767,15 +768,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 104                         ;
-;     CLR               ; 3                           ;
+; arriav_ff             ; 105                         ;
+;     CLR               ; 4                           ;
+;     CLR SCLR          ; 21                          ;
 ;     ENA               ; 6                           ;
 ;     ENA CLR           ; 28                          ;
-;     ENA CLR SCLR      ; 21                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 26                          ;
-; arriav_lcell_comb     ; 261                         ;
+; arriav_lcell_comb     ; 262                         ;
 ;     arith             ; 154                         ;
 ;         0 data inputs ; 16                          ;
 ;         1 data inputs ; 95                          ;
@@ -784,12 +785,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 12                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 106                         ;
+;     normal            ; 107                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 10                          ;
-;         2 data inputs ; 20                          ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 23                          ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 25                          ;
 ;         5 data inputs ; 23                          ;
 ;         6 data inputs ; 21                          ;
 ; boundary_port         ; 31                          ;
@@ -797,7 +798,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 6                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.20                       ;
-; Average LUT depth     ; 7.53                        ;
+; Average LUT depth     ; 7.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -816,7 +817,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 15 22:02:48 2018
+    Info: Processing started: Tue May 15 22:53:27 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_ball -c vga_ball
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -982,20 +983,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/lab08/Parte2/vga_ball.vhd Line: 39
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/lab08/Parte2/vga_ball.vhd Line: 39
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning: RST port on the PLL is not properly connected on instance vgacon:vga_controller|vga_pll:divider|vga_pll_0002:vga_pll_inst|altera_pll:altera_pll_i|general[0].gpll. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: /opt/altera/17.1/quartus/libraries/megafunctions/altera_pll.v Line: 748
     Info: Must be connected
-Info (21057): Implemented 321 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 323 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 283 logic cells
+    Info (21061): Implemented 285 logic cells
     Info (21064): Implemented 6 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 1231 megabytes
-    Info: Processing ended: Tue May 15 22:02:58 2018
+    Info: Peak virtual memory: 1233 megabytes
+    Info: Processing ended: Tue May 15 22:53:37 2018
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:22
 
 

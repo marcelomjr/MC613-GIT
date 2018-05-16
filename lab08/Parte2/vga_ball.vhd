@@ -78,7 +78,7 @@ architecture comportamento of vga_ball is
   signal atualiza_pos_y : std_logic;    -- se '1' = bola muda sua pos. no eixo y
 
   -- Especificação dos tipos e sinais da máquina de estados de controle
-  type estado_t is (show_splash, inicio, constroi_quadro, move_bola);
+  type estado_t is (show_splash, inicio, constroi_quadro, move_bola, clear);
   signal estado: estado_t := show_splash;
   signal proximo_estado: estado_t := show_splash;
 
@@ -339,6 +339,17 @@ begin  -- comportamento
                              we             <= '0';
                              timer_rstn     <= '0'; 
                              timer_enable   <= '0';
+									  
+		when clear         => proximo_estado <= inicio;
+                             atualiza_pos_x <= '0';
+                             atualiza_pos_y <= '0';
+                             line_rstn      <= '1';
+                             line_enable    <= '1';
+                             col_rstn       <= '1';
+                             col_enable     <= '1';
+									  we             <= '1';
+                             timer_rstn     <= '0'; 
+                             timer_enable   <= '0';
 
       when others         => proximo_estado <= inicio;
                              atualiza_pos_x <= '0';
@@ -361,7 +372,7 @@ begin  -- comportamento
   seq_fsm: process (CLOCK_50, rstn)
   begin  -- process seq_fsm
     if rstn = '0' then                  -- asynchronous reset (active low)
-      estado <= inicio;
+      estado <= clear;
     elsif CLOCK_50'event and CLOCK_50 = '1' then  -- rising clock edge
       estado <= proximo_estado;
     end if;

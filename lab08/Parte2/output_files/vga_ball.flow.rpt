@@ -1,5 +1,5 @@
 Flow report for vga_ball
-Tue May 15 22:03:45 2018
+Tue May 15 22:54:24 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue May 15 22:03:45 2018       ;
+; Flow Status                     ; Successful - Tue May 15 22:54:24 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; vga_ball                                    ;
 ; Top-level Entity Name           ; vga_ball                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 140 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 118                                         ;
+; Logic utilization (in ALMs)     ; 141 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 115                                         ;
 ; Total pins                      ; 31 / 457 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 36,864 / 4,065,280 ( < 1 % )                ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/15/2018 22:02:48 ;
+; Start date & time ; 05/15/2018 22:53:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; vga_ball            ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                                           ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273440552319762.152643256813733                                                 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 273440552319762.152643560721401                                                 ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                                     ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                                       ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                                                            ; --            ; --          ; eda_simulation ;
@@ -100,12 +100,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 1194 MB             ; 00:00:21                           ;
-; Fitter                    ; 00:00:32     ; 1.0                     ; 2627 MB             ; 00:00:51                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 1097 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.1                     ; 1382 MB             ; 00:00:06                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1374 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:25                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 1191 MB             ; 00:00:21                           ;
+; Fitter                    ; 00:00:31     ; 1.0                     ; 2624 MB             ; 00:00:51                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1096 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.1                     ; 1394 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1372 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:52     ; --                      ; --                  ; 00:01:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
