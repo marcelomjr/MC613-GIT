@@ -4,135 +4,119 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "HEX2[0]",
+					"name" : "VGA_R[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[1]",
+					"name" : "VGA_R[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[2]",
+					"name" : "VGA_R[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[3]",
+					"name" : "VGA_R[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[4]",
+					"name" : "VGA_R[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[5]",
+					"name" : "VGA_R[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX2[6]",
+					"name" : "VGA_R[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[0]",
+					"name" : "VGA_R[7]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[1]",
+					"name" : "VGA_G[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[2]",
+					"name" : "VGA_G[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[3]",
+					"name" : "VGA_G[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[4]",
+					"name" : "VGA_G[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[5]",
+					"name" : "VGA_G[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX3[6]",
+					"name" : "VGA_G[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[0]",
+					"name" : "VGA_G[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[1]",
+					"name" : "VGA_G[7]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[2]",
+					"name" : "VGA_B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[3]",
+					"name" : "VGA_B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[4]",
+					"name" : "VGA_B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[5]",
+					"name" : "VGA_B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX4[6]",
+					"name" : "VGA_B[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[0]",
+					"name" : "VGA_B[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[1]",
+					"name" : "VGA_B[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[2]",
+					"name" : "VGA_B[7]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[3]",
+					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[4]",
+					"name" : "VGA_VS",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[5]",
+					"name" : "KEY[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HEX5[6]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "key1",
-					"strict" : false
-				},
-				{
-					"name" : "type_of_money[0]",
-					"strict" : false
-				},
-				{
-					"name" : "type_of_money[1]",
-					"strict" : false
-				},
-				{
-					"name" : "clock",
-					"strict" : false
-				},
-				{
-					"name" : "resetn",
+					"name" : "SW[0]",
 					"strict" : false
 				}
 			]
