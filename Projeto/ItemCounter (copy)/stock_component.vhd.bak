@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity stock_component is
+	port(
+	reset: 		 		in std_logic;
+	load: 		 		in std_logic;
+	positive_signal:	in std_logic;
+	input_value: 		in std_logic_vector(7 downto 0);
+	total_value: 		out integer := 0;
+	);
+end stock_component;
+
+architecture Behavior of stock_component is
+begin
+	process
+end Behavior;
