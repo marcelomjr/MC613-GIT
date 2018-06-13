@@ -1,0 +1,6 @@
+    Ao utilizar uma chave como clock, o registrador funcionou normalmente para a
+carga paralela, porém ao se tentar realizar o deslocamento para a esquerda ou
+para direita ele não realiza um passo a cada subida da chave e sim executa
+inúmeras vezes.
+
+ Assim, não pode-se observar as mudanças de cada etapa de deslocamento.

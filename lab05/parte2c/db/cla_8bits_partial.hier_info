@@ -1,0 +1,103 @@
+|cla_8bits_partial
+x[0] => cla_4bits:CLA0.x[0]
+x[1] => cla_4bits:CLA0.x[1]
+x[2] => cla_4bits:CLA0.x[2]
+x[3] => cla_4bits:CLA0.x[3]
+x[4] => cla_4bits:CLA1.x[0]
+x[5] => cla_4bits:CLA1.x[1]
+x[6] => cla_4bits:CLA1.x[2]
+x[7] => cla_4bits:CLA1.x[3]
+y[0] => cla_4bits:CLA0.y[0]
+y[1] => cla_4bits:CLA0.y[1]
+y[2] => cla_4bits:CLA0.y[2]
+y[3] => cla_4bits:CLA0.y[3]
+y[4] => cla_4bits:CLA1.y[0]
+y[5] => cla_4bits:CLA1.y[1]
+y[6] => cla_4bits:CLA1.y[2]
+y[7] => cla_4bits:CLA1.y[3]
+cin => cla_4bits:CLA0.cin
+sum[0] <= cla_4bits:CLA0.sum[0]
+sum[1] <= cla_4bits:CLA0.sum[1]
+sum[2] <= cla_4bits:CLA0.sum[2]
+sum[3] <= cla_4bits:CLA0.sum[3]
+sum[4] <= cla_4bits:CLA1.sum[0]
+sum[5] <= cla_4bits:CLA1.sum[1]
+sum[6] <= cla_4bits:CLA1.sum[2]
+sum[7] <= cla_4bits:CLA1.sum[3]
+cout <= cla_4bits:CLA1.cout
+
+
+|cla_8bits_partial|cla_4bits:CLA0
+x[0] => g[0].IN0
+x[0] => p[0].IN0
+x[0] => sum.IN0
+x[1] => g[1].IN0
+x[1] => p[1].IN0
+x[1] => sum.IN0
+x[2] => g[2].IN0
+x[2] => p[2].IN0
+x[2] => sum.IN0
+x[3] => g[3].IN0
+x[3] => p[3].IN0
+x[3] => sum.IN0
+y[0] => g[0].IN1
+y[0] => p[0].IN1
+y[0] => sum.IN1
+y[1] => g[1].IN1
+y[1] => p[1].IN1
+y[1] => sum.IN1
+y[2] => g[2].IN1
+y[2] => p[2].IN1
+y[2] => sum.IN1
+y[3] => g[3].IN1
+y[3] => p[3].IN1
+y[3] => sum.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => sum.IN1
+sum[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|cla_8bits_partial|cla_4bits:CLA1
+x[0] => g[0].IN0
+x[0] => p[0].IN0
+x[0] => sum.IN0
+x[1] => g[1].IN0
+x[1] => p[1].IN0
+x[1] => sum.IN0
+x[2] => g[2].IN0
+x[2] => p[2].IN0
+x[2] => sum.IN0
+x[3] => g[3].IN0
+x[3] => p[3].IN0
+x[3] => sum.IN0
+y[0] => g[0].IN1
+y[0] => p[0].IN1
+y[0] => sum.IN1
+y[1] => g[1].IN1
+y[1] => p[1].IN1
+y[1] => sum.IN1
+y[2] => g[2].IN1
+y[2] => p[2].IN1
+y[2] => sum.IN1
+y[3] => g[3].IN1
+y[3] => p[3].IN1
+y[3] => sum.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => carry.IN1
+cin => sum.IN1
+sum[0] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[1] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[2] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+sum[3] <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= carry.DB_MAX_OUTPUT_PORT_TYPE
+
+

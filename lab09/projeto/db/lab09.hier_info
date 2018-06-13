@@ -1,0 +1,28 @@
+|ram_block
+Clock => ~NO_FANOUT~
+Address[0] => ~NO_FANOUT~
+Address[1] => ~NO_FANOUT~
+Address[2] => ~NO_FANOUT~
+Address[3] => ~NO_FANOUT~
+Address[4] => ~NO_FANOUT~
+Address[5] => ~NO_FANOUT~
+Address[6] => ~NO_FANOUT~
+Data[0] => ~NO_FANOUT~
+Data[1] => ~NO_FANOUT~
+Data[2] => ~NO_FANOUT~
+Data[3] => ~NO_FANOUT~
+Data[4] => ~NO_FANOUT~
+Data[5] => ~NO_FANOUT~
+Data[6] => ~NO_FANOUT~
+Data[7] => ~NO_FANOUT~
+Q[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4].DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5].DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6].DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7].DB_MAX_OUTPUT_PORT_TYPE
+WrEn => ~NO_FANOUT~
+
+

@@ -1,0 +1,37 @@
+
+CLA de 4 bits:
+    Report Path: Found 1 paths. Longest delay is 7.778
+        -from [get_ports {cin x[0] x[1] x[2] x[3] y[0] y[2] y[1] y[3]}]
+        -to [get_ports {cout sum[0] sum[1] sum[2] sum[3]}]
+        -npaths 1
+        -multi_corner
+        -panel_name "Report Path"
+
+
+    Conclusão:
+
+    O tempo do caminho crítico do somador ​ carry look-ahead de 4 bits é um pouco maior (0.010 ns) do que o tempo para somador ​ ripple-carry de 4 ​ bits.
+
+
+CLA parcial de 8 bits:
+    Report Path: Found 1 paths. Longest delay is 12.744
+        -from [get_ports {x[0] x[1] x[2] x[3] x[4] x[5] x[6] x[7] y[0] y[1] y[2] y[3] y[4] y[5] y[6] y[7] cin}]
+        -to [get_keepers {sum[0] sum[1] sum[2] sum[3] sum[4] sum[5] sum[6] sum[7] cout}]
+        -npaths 1
+        -multi_corner
+        -panel_name "Report Path"
+
+    Conclusão:
+        O tempo do caminho crĩtico do somador ​ ripple-carry de 8 ​ bits é 13.438 ns.
+        Assim o tempo do caminho crítico do somador de 8 bits com CLA parcial é menor (0.694 ns) do que o tempo para somador ​ ripple-carry de 8 ​ bits.
+
+CLA puro de 8 bits:
+    Report Path: Found 1 paths. Longest delay is 8.902
+        -from [get_ports {x[0] x[1] x[2] x[3] x[4] x[5] x[6] x[7] y[0] y[1] y[2] y[3] y[4] y[5] y[6] y[7] cin}]
+        -to [get_keepers {cout sum[0] sum[1] sum[2] sum[3] sum[4] sum[5] sum[6] sum[7]}]
+        -npaths 1
+        -multi_corner
+        -panel_name "Report Path"
+
+    Conclusão:
+        O tempo do caminho crítico para o somador carry look-ahead (CLA puro) 8 ​ bits é de 8.902, ou seja, é menor do que o do somador ​ ripple-carry de 8 ​ bits e do somador de 8 bits com CLA parcial.

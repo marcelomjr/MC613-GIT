@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, /home/ec2014/ra156531/disciplinas/MC613/Projetos/lab2/bin2dec/bin2dec.vhd
+source_file = 1, /opt/altera/17.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, /opt/altera/17.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, /opt/altera/17.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, /opt/altera/17.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+source_file = 1, /home/ec2014/ra156531/disciplinas/MC613/Projetos/lab2/bin2dec/db/bin2dec.cbx.xml
+design_name = bin2dec
+instance = comp, \f~output , f~output, bin2dec, 1
+instance = comp, \a~input , a~input, bin2dec, 1
+instance = comp, \c~input , c~input, bin2dec, 1
+instance = comp, \b~input , b~input, bin2dec, 1
+instance = comp, \f~0 , f~0, bin2dec, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, bin2dec, 1

@@ -1,0 +1,16 @@
+|lab2
+F <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+B => inst10.IN0
+B => inst4.IN0
+B => inst1.IN0
+C => inst11.IN0
+C => inst1.IN1
+C => inst.IN0
+D => inst3.IN2
+D => inst12.IN0
+E => inst5.IN0
+E => inst1.IN2
+E => inst.IN2
+A => inst9.IN0
+
+

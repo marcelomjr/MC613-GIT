@@ -1,0 +1,98 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ec2014/ra156531/disciplinas/MC613/Projetos/lab05/parte2d/simulation/qsim
+Ecla_8bits
+Z1 w1522869575
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z6 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z7 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+R0
+Z9 8cla_8bits.vho
+Z10 Fcla_8bits.vho
+l0
+L36
+VTBoKNLzPYa:Q?;P[;42[:1
+!s100 b?Qb9DAK1W>d9Z7n0a<bo1
+Z11 OV;C;10.5b;63
+32
+Z12 !s110 1522869576
+!i10b 1
+Z13 !s108 1522869576.000000
+Z14 !s90 -work|work|cla_8bits.vho|
+Z15 !s107 cla_8bits.vho|
+!i113 1
+Z16 o-work work
+Z17 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 9 cla_8bits 0 22 TBoKNLzPYa:Q?;P[;42[:1
+l145
+L75
+V@6^;VH3E8M=F;l6cXMW732
+!s100 <iL^W5B>ja5cM;o<>Z9n_2
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 1
+R16
+R17
+Ecla_8bits_vhd_vec_tst
+Z18 w1522869574
+R6
+R7
+R0
+Z19 8cla_8bits.vwf.vht
+Z20 Fcla_8bits.vwf.vht
+l0
+L31
+VLFOS5MCi^l@KS55Ol<LFR3
+!s100 TPk=6gK5=[?PKdWNlLAQl1
+R11
+32
+R12
+!i10b 1
+R13
+Z21 !s90 -work|work|cla_8bits.vwf.vht|
+Z22 !s107 cla_8bits.vwf.vht|
+!i113 1
+R16
+R17
+Acla_8bits_arch
+R6
+R7
+DEx4 work 21 cla_8bits_vhd_vec_tst 0 22 LFOS5MCi^l@KS55Ol<LFR3
+l50
+L33
+VX8nPfBR]mj^N>9lHHX;MM3
+!s100 >CPfN4k8M]b]Z0aZZQP9R0
+R11
+32
+R12
+!i10b 1
+R13
+R21
+R22
+!i113 1
+R16
+R17

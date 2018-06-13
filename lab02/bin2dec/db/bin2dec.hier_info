@@ -1,0 +1,8 @@
+|bin2dec
+a => d.IN0
+b => e.IN0
+b => d.IN1
+c => e.IN1
+f << f.DB_MAX_OUTPUT_PORT_TYPE
+
+

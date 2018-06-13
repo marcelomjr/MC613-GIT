@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Dropbox (BEPiD)/MyFiles/Unicamp/MC613/Projetos/lab07/projeto/Parte1A/simulation/qsim
+Eshift_register
+Z1 w1524065745
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+Z11 d/home/ec2014/ra156531/disciplinas/MC613/Projetos/lab07/Parte1A/simulation/qsim
+Z12 8shift_register.vho
+Z13 Fshift_register.vho
+l0
+L38
+VUjjkh^KCfj[lMcm5KD`A`3
+!s100 :?;4eg5i`1P;9Oo2VQla61
+Z14 OV;C;10.5b;63
+32
+Z15 !s110 1524065747
+!i10b 1
+Z16 !s108 1524065746.000000
+Z17 !s90 -work|work|shift_register.vho|
+Z18 !s107 shift_register.vho|
+!i113 1
+Z19 o-work work
+Z20 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 14 shift_register 0 22 Ujjkh^KCfj[lMcm5KD`A`3
+l113
+L67
+VXzW>7<`:6YF>DEoGVXb1k2
+!s100 IAh?W9g2GCaZcVi`jb:P_3
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R19
+R20
+Eshift_register_vhd_vec_tst
+Z21 w1524065743
+R8
+R9
+R11
+Z22 8shift_register.vwf.vht
+Z23 Fshift_register.vwf.vht
+l0
+L31
+V=ITJF@GLaM<;BjgaeI6a>1
+!s100 2o?GU6UTEzX^mg7mzo]oC1
+R14
+32
+R15
+!i10b 1
+Z24 !s108 1524065747.000000
+Z25 !s90 -work|work|shift_register.vwf.vht|
+Z26 !s107 shift_register.vwf.vht|
+!i113 1
+R19
+R20
+Ashift_register_arch
+R8
+R9
+Z27 DEx4 work 26 shift_register_vhd_vec_tst 0 22 =ITJF@GLaM<;BjgaeI6a>1
+l50
+L33
+Z28 VQRI7a@NPe5C@Re6M_Iai^2
+Z29 !s100 VJG2TQ<ecgTP>=gj6=:TN2
+R14
+32
+R15
+!i10b 1
+R24
+R25
+R26
+!i113 1
+R19
+R20

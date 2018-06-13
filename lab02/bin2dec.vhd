@@ -1,0 +1,17 @@
+Library IEEE;
+use IEEE.std_logic_1164.all;
+
+entiity bin2dec is
+	port (
+		SW: in std_logic_vector(3 downto 0);
+		HEX0: out std_logic_vector(6 downto 0)
+	);
+end bin2dec;
+
+Architecture estrutural OF bin2dec IS
+	signal d, e : std_logic;
+Begin
+	f <= d or e;
+	d <= a and (not b);
+	e <= b and c;
+End estrutural

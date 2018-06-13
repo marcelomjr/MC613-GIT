@@ -1,5 +1,5 @@
 Flow report for stock_component
-Tue Jun 12 22:22:14 2018
+Wed Jun 13 04:17:56 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Jun 12 22:22:14 2018       ;
+; Flow Status                     ; Successful - Wed Jun 13 04:17:56 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; stock_component                             ;
-; Top-level Entity Name           ; stock_component                             ;
+; Top-level Entity Name           ; stock_controller                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 17 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 8                                           ;
-; Total pins                      ; 20 / 457 ( 4 % )                            ;
+; Logic utilization (in ALMs)     ; 86 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 32                                          ;
+; Total pins                      ; 36 / 457 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -67,28 +67,29 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2018 22:14:00 ;
+; Start date & time ; 06/13/2018 04:16:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; stock_component     ;
 +-------------------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                            ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 273440552275683.152885244015131        ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                   ;
++-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value   ; Entity Name      ; Section Id     ;
++-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 273440552275683.152887421832405        ; --              ; --               ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --              ; --               ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>          ; --               ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --              ; --               ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --              ; --               ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --              ; --               ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --              ; stock_controller ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --              ; stock_controller ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --              ; stock_controller ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --              ; --               ; --             ;
+; TOP_LEVEL_ENTITY                    ; stock_controller                       ; stock_component ; --               ; --             ;
++-------------------------------------+----------------------------------------+-----------------+------------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,20 +97,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 1140 MB             ; 00:00:21                           ;
-; Fitter                    ; 00:00:31     ; 1.0                     ; 2531 MB             ; 00:00:48                           ;
-; Assembler                 ; 00:00:05     ; 1.0                     ; 1090 MB             ; 00:00:05                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.1                     ; 1327 MB             ; 00:00:04                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1259 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1245 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1248 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1248 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1245 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:56     ; --                      ; --                  ; 00:01:27                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 1145 MB             ; 00:00:20                           ;
+; Fitter                    ; 00:00:34     ; 1.0                     ; 2538 MB             ; 00:00:54                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 1091 MB             ; 00:00:06                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.1                     ; 1327 MB             ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1262 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:55     ; --                      ; --                  ; 00:01:26                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -123,14 +116,6 @@ refer to the applicable agreement for further details.
 ; Assembler                 ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
 ; TimeQuest Timing Analyzer ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
 ; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
-; EDA Netlist Writer        ; santalucia.lab.ic.unicamp.br ; Fedora Core ; Fedora Core ; x86_64         ;
 +---------------------------+------------------------------+-------------+-------------+----------------+
 
 
@@ -142,14 +127,6 @@ quartus_fit --read_settings_files=off --write_settings_files=off stock_component
 quartus_asm --read_settings_files=off --write_settings_files=off stock_component -c stock_component
 quartus_sta stock_component -c stock_component
 quartus_eda --read_settings_files=off --write_settings_files=off stock_component -c stock_component
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off stock_component -c stock_component --vector_source=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vwf --testbench_file=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/stock_component.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/ stock_component -c stock_component
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off stock_component -c stock_component --vector_source=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vwf --testbench_file=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/stock_component.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/ stock_component -c stock_component
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off stock_component -c stock_component --vector_source=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vwf --testbench_file=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/stock_component.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/ stock_component -c stock_component
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off stock_component -c stock_component --vector_source=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vwf --testbench_file=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/stock_component.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/ stock_component -c stock_component
 
 
 
