@@ -8,8 +8,8 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim
-Estock_component
-Z1 w1528852934
+Emoney_controller
+Z1 w1528895131
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
@@ -24,18 +24,110 @@ Z11 8stock_component.vho
 Z12 Fstock_component.vho
 l0
 L38
-VhkoE`ogALDGBKLRVgA7Ad2
-!s100 BL=U8]4O6lFHMZodVSUF11
+VMbP>DYZKfbiQkF:^:09?i0
+!s100 FTGD[Ra:JdS1<1AGnXjGo0
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1528852934
+Z14 !s110 1528895132
 !i10b 1
-Z15 !s108 1528852934.000000
+Z15 !s108 1528895132.000000
 Z16 !s90 -work|work|stock_component.vho|
 Z17 !s107 stock_component.vho|
 !i113 1
 Z18 o-work work
 Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 16 money_controller 0 22 MbP>DYZKfbiQkF:^:09?i0
+l420
+L150
+VXXg011VUJW`@G6>KjJOoC3
+!s100 D=SI51LQF=nGiMVoa[AKZ2
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Emoney_controller_vhd_vec_tst
+Z20 w1528895130
+R8
+R9
+R0
+Z21 8receipt_controller.vwf.vht
+Z22 Freceipt_controller.vwf.vht
+l0
+L31
+Vc_dcdPFdaCOzI5l7_nV0C1
+!s100 cRR?JE_GnLgkomaUeUY3E1
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -work|work|receipt_controller.vwf.vht|
+Z24 !s107 receipt_controller.vwf.vht|
+!i113 1
+R18
+R19
+Amoney_controller_arch
+R8
+R9
+Z25 DEx4 work 28 money_controller_vhd_vec_tst 0 22 c_dcdPFdaCOzI5l7_nV0C1
+l72
+L33
+Z26 VT`@[QLSNV3aOW=EcN:^kM3
+Z27 !s100 M6GV@R;M[@lD>eENW>2BZ1
+R13
+32
+R14
+!i10b 1
+R15
+R23
+R24
+!i113 1
+R18
+R19
+Estock_component
+Z28 w1528852934
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R0
+R11
+R12
+l0
+L38
+VhkoE`ogALDGBKLRVgA7Ad2
+!s100 BL=U8]4O6lFHMZodVSUF11
+R13
+32
+Z29 !s110 1528852934
+!i10b 1
+Z30 !s108 1528852934.000000
+R16
+R17
+!i113 1
+R18
+R19
 Astructure
 R2
 R3
@@ -53,50 +145,50 @@ Vf2T]J7?F;kj@JgM?F3f1V2
 !s100 [cARTMHi4;fe=<eGWT`k;2
 R13
 32
-R14
+R29
 !i10b 1
-R15
+R30
 R16
 R17
 !i113 1
 R18
 R19
 Estock_component_vhd_vec_tst
-Z20 w1528852932
+Z31 w1528852932
 R8
 R9
 R0
-Z21 8stock_component.vwf.vht
-Z22 Fstock_component.vwf.vht
+Z32 8stock_component.vwf.vht
+Z33 Fstock_component.vwf.vht
 l0
 L31
 VScHigU[]0:APfDCO0oZ4b3
 !s100 k9lDGmHLGXl7lY]R4T@K83
 R13
 32
-R14
+R29
 !i10b 1
-R15
-Z23 !s90 -work|work|stock_component.vwf.vht|
-Z24 !s107 stock_component.vwf.vht|
+R30
+Z34 !s90 -work|work|stock_component.vwf.vht|
+Z35 !s107 stock_component.vwf.vht|
 !i113 1
 R18
 R19
 Astock_component_arch
 R8
 R9
-Z25 DEx4 work 27 stock_component_vhd_vec_tst 0 22 ScHigU[]0:APfDCO0oZ4b3
+DEx4 work 27 stock_component_vhd_vec_tst 0 22 ScHigU[]0:APfDCO0oZ4b3
 l52
 L33
 VRT3;TbCb^IJgU6d=mzgm60
 !s100 ]m]GgDdLQmba5h>B3`NeG3
 R13
 32
-R14
+R29
 !i10b 1
-R15
-R23
-R24
+R30
+R34
+R35
 !i113 1
 R18
 R19

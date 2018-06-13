@@ -3,15 +3,21 @@ use ieee.std_logic_1164.all;
 
 entity stock_controller is
 	port(
-	clock: 				in std_logic;
-	resetn: 		 		in std_logic;
+	clock: 				in std_logic; -- key3
+	resetn: 		 		in std_logic; -- key0
+	
 	key1: 		 		in std_logic;
 	key2:					in std_logic; 
+	
 	input_value: 		in std_logic_vector(7 downto 0); -- vai ser usado tb pelos switchs
 	stock_selected:	in std_logic_vector(1 downto 0); -- vai ser usado tb pelos switchs
-	total_value: 		out std_logic_vector(7 downto 0);
 	
-	--apagar
+	
+	stock0: 				out	std_logic_vector(7 downto 0);
+	stock1: 				out	std_logic_vector(7 downto 0);
+	stock2: 				out	std_logic_vector(7 downto 0);
+	stock3: 				out	std_logic_vector(7 downto 0);
+	
 	HEX0: out std_logic_vector(6 downto 0);
 	HEX1: out std_logic_vector(6 downto 0)
 	);
@@ -51,7 +57,7 @@ begin
 	en2 <= '1' when (stock_selected = "10") else '0';
 	en3 <= '1' when (stock_selected = "11") else '0';
 	
-	stock0: stock_component port map (
+	stock0_component: stock_component port map (
 		clock => clock,
 		enable => en0,
 		resetn => resetn,
@@ -61,7 +67,7 @@ begin
 		total_value => stock0_counter
 	);
 	
-	stock1: stock_component port map (
+	stock1_component: stock_component port map (
 		clock => clock,
 		enable => en1,
 		resetn => resetn,
@@ -71,7 +77,7 @@ begin
 		total_value => stock1_counter
 	);
 	
-	stock2: stock_component port map (
+	stock2_component: stock_component port map (
 		clock => clock,
 		enable => en2,
 		resetn => resetn,
@@ -81,7 +87,7 @@ begin
 		total_value => stock2_counter
 	);
 	
-	stock3: stock_component port map (
+	stock3_component: stock_component port map (
 		clock => clock,
 		enable => en3,
 		resetn => resetn,
@@ -92,7 +98,6 @@ begin
 	);
 	
 	
-	-- TALVEZ MUDE DEPENDENDO DO CONTROLLER
 	positive_signal <= key2;
 	load <= not key1;
 	
@@ -107,7 +112,7 @@ begin
 					 stock1_counter	(7 downto 4) when "01",
 					 stock2_counter	(7 downto 4) when "10",
 					 stock3_counter	(7 downto 4) when "11";
-				 
+					 
 	hexseg0: bin2hex port map(
 		SW => digit0,
 		HEX0 => HEX0
@@ -118,5 +123,8 @@ begin
 		HEX0 => HEX1
 	);
 
-	
+	stock0 <= stock0_counter;
+	stock1 <= stock1_counter;
+	stock2 <= stock2_counter;
+	stock3 <= stock3_counter;
 end Behavior;

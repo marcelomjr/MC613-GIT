@@ -1,5 +1,5 @@
 Analysis & Synthesis report for stock_component
-Wed Jun 13 04:17:08 2018
+Wed Jun 13 11:01:50 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -15,9 +15,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Port Connectivity Checks: "receipt_controller:receipt_money"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +44,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 13 04:17:08 2018       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 13 11:01:50 2018       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; stock_component                             ;
-; Top-level Entity Name           ; stock_controller                            ;
+; Top-level Entity Name           ; money_controller                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 32                                          ;
-; Total pins                      ; 36                                          ;
+; Total registers                 ; 16                                          ;
+; Total pins                      ; 88                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +70,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; stock_controller   ; stock_component    ;
+; Top-level entity name                                                           ; money_controller   ; stock_component    ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
@@ -167,15 +168,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
-; stock_component.vhd              ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd  ;         ;
-; bin2hex.vhd                      ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/bin2hex.vhd          ;         ;
-; stock_controller.vhd             ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
+; bin2hex.vhd                      ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/bin2hex.vhd            ;         ;
+; receipt_controller.vhd           ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/receipt_controller.vhd ;         ;
+; money_controller.vhd             ; yes             ; User VHDL File  ; /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd   ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------+
@@ -183,41 +184,40 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+------------+
 ; Resource                                    ; Usage      ;
 +---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 85         ;
+; Estimate of Logic utilization (ALMs needed) ; 59         ;
 ;                                             ;            ;
-; Combinational ALUT usage for logic          ; 162        ;
+; Combinational ALUT usage for logic          ; 103        ;
 ;     -- 7 input functions                    ; 0          ;
-;     -- 6 input functions                    ; 8          ;
+;     -- 6 input functions                    ; 15         ;
 ;     -- 5 input functions                    ; 0          ;
-;     -- 4 input functions                    ; 46         ;
-;     -- <=3 input functions                  ; 108        ;
+;     -- 4 input functions                    ; 29         ;
+;     -- <=3 input functions                  ; 59         ;
 ;                                             ;            ;
-; Dedicated logic registers                   ; 32         ;
+; Dedicated logic registers                   ; 16         ;
 ;                                             ;            ;
-; I/O pins                                    ; 36         ;
+; I/O pins                                    ; 88         ;
 ;                                             ;            ;
 ; Total DSP Blocks                            ; 0          ;
 ;                                             ;            ;
-; Maximum fan-out node                        ; key2~input ;
-; Maximum fan-out                             ; 36         ;
-; Total fan-out                               ; 726        ;
-; Average fan-out                             ; 2.73       ;
+; Maximum fan-out node                        ; key1~input ;
+; Maximum fan-out                             ; 16         ;
+; Total fan-out                               ; 500        ;
+; Average fan-out                             ; 1.69       ;
 +---------------------------------------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name      ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+------------------+--------------+
-; |stock_controller           ; 162 (8)             ; 32 (0)                    ; 0                 ; 0          ; 36   ; 0            ; |stock_controller                        ; stock_controller ; work         ;
-;    |bin2hex:hexseg0|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|bin2hex:hexseg0        ; bin2hex          ; work         ;
-;    |bin2hex:hexseg1|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|bin2hex:hexseg1        ; bin2hex          ; work         ;
-;    |stock_component:stock0| ; 35 (35)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|stock_component:stock0 ; stock_component  ; work         ;
-;    |stock_component:stock1| ; 35 (35)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|stock_component:stock1 ; stock_component  ; work         ;
-;    |stock_component:stock2| ; 35 (35)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|stock_component:stock2 ; stock_component  ; work         ;
-;    |stock_component:stock3| ; 35 (35)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |stock_controller|stock_component:stock3 ; stock_component  ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name        ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+--------------------+--------------+
+; |money_controller                     ; 103 (0)             ; 16 (0)                    ; 0                 ; 0          ; 88   ; 0            ; |money_controller                                  ; money_controller   ; work         ;
+;    |bin2hex:hexse2|                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |money_controller|bin2hex:hexse2                   ; bin2hex            ; work         ;
+;    |bin2hex:hexse4|                   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |money_controller|bin2hex:hexse4                   ; bin2hex            ; work         ;
+;    |bin2hex:hexseg3|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |money_controller|bin2hex:hexseg3                  ; bin2hex            ; work         ;
+;    |bin2hex:hexseg5|                  ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |money_controller|bin2hex:hexseg5                  ; bin2hex            ; work         ;
+;    |receipt_controller:receipt_money| ; 75 (75)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |money_controller|receipt_controller:receipt_money ; receipt_controller ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -226,23 +226,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 16    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |stock_controller|Mux0     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |money_controller|receipt_controller:receipt_money|total[3] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "receipt_controller:receipt_money" ;
++-------------------+-------+----------+-----------------------+
+; Port              ; Type  ; Severity ; Details               ;
++-------------------+-------+----------+-----------------------+
+; enable_controller ; Input ; Info     ; Stuck at VCC          ;
++-------------------+-------+----------+-----------------------+
 
 
 +-----------------------------------------------------+
@@ -250,23 +259,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 32                          ;
-;     ENA CLR           ; 32                          ;
-; arriav_lcell_comb     ; 165                         ;
-;     arith             ; 36                          ;
-;         1 data inputs ; 4                           ;
-;         3 data inputs ; 32                          ;
-;     normal            ; 129                         ;
+; arriav_ff             ; 16                          ;
+;     CLR               ; 1                           ;
+;     ENA CLR           ; 15                          ;
+; arriav_lcell_comb     ; 108                         ;
+;     arith             ; 59                          ;
+;         1 data inputs ; 58                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 49                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 40                          ;
-;         4 data inputs ; 46                          ;
-;         6 data inputs ; 8                           ;
-; boundary_port         ; 36                          ;
+;         1 data inputs ; 4                           ;
+;         4 data inputs ; 29                          ;
+;         6 data inputs ; 15                          ;
+; boundary_port         ; 88                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 4.00                        ;
+; Max LUT depth         ; 3.40                        ;
+; Average LUT depth     ; 2.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -285,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun 13 04:16:58 2018
+    Info: Processing started: Wed Jun 13 11:01:40 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off stock_component -c stock_component
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -296,67 +304,92 @@ Info (12021): Found 2 design units, including 1 entities, in source file bin2hex
     Info (12022): Found design unit 1: bin2hex-Behavior File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/bin2hex.vhd Line: 12
     Info (12023): Found entity 1: bin2hex File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/bin2hex.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file stock_controller.vhd
-    Info (12022): Found design unit 1: stock_controller-Behavior File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 20
+    Info (12022): Found design unit 1: stock_controller-Behavior File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 26
     Info (12023): Found entity 1: stock_controller File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 4
-Info (12127): Elaborating entity "stock_controller" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at stock_controller.vhd(12): used implicit default value for signal "total_value" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-Info (12128): Elaborating entity "stock_component" for hierarchy "stock_component:stock0" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 54
-Warning (10492): VHDL Process Statement warning at stock_component.vhd(27): signal "enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 27
-Warning (10492): VHDL Process Statement warning at stock_component.vhd(29): signal "input_value" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 29
-Warning (10492): VHDL Process Statement warning at stock_component.vhd(31): signal "load" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 31
-Info (12128): Elaborating entity "bin2hex" for hierarchy "bin2hex:hexseg0" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 111
-Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "stock_component:stock0|total[0]" is converted into an equivalent circuit using register "stock_component:stock0|total[0]~_emulated" and latch "stock_component:stock0|total[0]~1" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[0]" is converted into an equivalent circuit using register "stock_component:stock1|total[0]~_emulated" and latch "stock_component:stock1|total[0]~1" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[0]" is converted into an equivalent circuit using register "stock_component:stock2|total[0]~_emulated" and latch "stock_component:stock2|total[0]~1" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[0]" is converted into an equivalent circuit using register "stock_component:stock3|total[0]~_emulated" and latch "stock_component:stock3|total[0]~1" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[1]" is converted into an equivalent circuit using register "stock_component:stock0|total[1]~_emulated" and latch "stock_component:stock0|total[1]~5" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[1]" is converted into an equivalent circuit using register "stock_component:stock1|total[1]~_emulated" and latch "stock_component:stock1|total[1]~5" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[1]" is converted into an equivalent circuit using register "stock_component:stock2|total[1]~_emulated" and latch "stock_component:stock2|total[1]~5" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[1]" is converted into an equivalent circuit using register "stock_component:stock3|total[1]~_emulated" and latch "stock_component:stock3|total[1]~5" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[2]" is converted into an equivalent circuit using register "stock_component:stock0|total[2]~_emulated" and latch "stock_component:stock0|total[2]~9" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[2]" is converted into an equivalent circuit using register "stock_component:stock1|total[2]~_emulated" and latch "stock_component:stock1|total[2]~9" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[2]" is converted into an equivalent circuit using register "stock_component:stock2|total[2]~_emulated" and latch "stock_component:stock2|total[2]~9" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[2]" is converted into an equivalent circuit using register "stock_component:stock3|total[2]~_emulated" and latch "stock_component:stock3|total[2]~9" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[3]" is converted into an equivalent circuit using register "stock_component:stock0|total[3]~_emulated" and latch "stock_component:stock0|total[3]~13" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[3]" is converted into an equivalent circuit using register "stock_component:stock1|total[3]~_emulated" and latch "stock_component:stock1|total[3]~13" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[3]" is converted into an equivalent circuit using register "stock_component:stock2|total[3]~_emulated" and latch "stock_component:stock2|total[3]~13" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[3]" is converted into an equivalent circuit using register "stock_component:stock3|total[3]~_emulated" and latch "stock_component:stock3|total[3]~13" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[4]" is converted into an equivalent circuit using register "stock_component:stock0|total[4]~_emulated" and latch "stock_component:stock0|total[4]~17" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[4]" is converted into an equivalent circuit using register "stock_component:stock1|total[4]~_emulated" and latch "stock_component:stock1|total[4]~17" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[4]" is converted into an equivalent circuit using register "stock_component:stock2|total[4]~_emulated" and latch "stock_component:stock2|total[4]~17" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[4]" is converted into an equivalent circuit using register "stock_component:stock3|total[4]~_emulated" and latch "stock_component:stock3|total[4]~17" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[5]" is converted into an equivalent circuit using register "stock_component:stock0|total[5]~_emulated" and latch "stock_component:stock0|total[5]~21" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[5]" is converted into an equivalent circuit using register "stock_component:stock1|total[5]~_emulated" and latch "stock_component:stock1|total[5]~21" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[5]" is converted into an equivalent circuit using register "stock_component:stock2|total[5]~_emulated" and latch "stock_component:stock2|total[5]~21" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[5]" is converted into an equivalent circuit using register "stock_component:stock3|total[5]~_emulated" and latch "stock_component:stock3|total[5]~21" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[6]" is converted into an equivalent circuit using register "stock_component:stock0|total[6]~_emulated" and latch "stock_component:stock0|total[6]~25" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[6]" is converted into an equivalent circuit using register "stock_component:stock1|total[6]~_emulated" and latch "stock_component:stock1|total[6]~25" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[6]" is converted into an equivalent circuit using register "stock_component:stock2|total[6]~_emulated" and latch "stock_component:stock2|total[6]~25" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[6]" is converted into an equivalent circuit using register "stock_component:stock3|total[6]~_emulated" and latch "stock_component:stock3|total[6]~25" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock0|total[7]" is converted into an equivalent circuit using register "stock_component:stock0|total[7]~_emulated" and latch "stock_component:stock0|total[7]~29" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock1|total[7]" is converted into an equivalent circuit using register "stock_component:stock1|total[7]~_emulated" and latch "stock_component:stock1|total[7]~29" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock2|total[7]" is converted into an equivalent circuit using register "stock_component:stock2|total[7]~_emulated" and latch "stock_component:stock2|total[7]~29" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
-    Warning (13310): Register "stock_component:stock3|total[7]" is converted into an equivalent circuit using register "stock_component:stock3|total[7]~_emulated" and latch "stock_component:stock3|total[7]~29" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_component.vhd Line: 28
+Info (12021): Found 2 design units, including 1 entities, in source file receipt_controller.vhd
+    Info (12022): Found design unit 1: receipt_controller-Behavior File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/receipt_controller.vhd Line: 16
+    Info (12023): Found entity 1: receipt_controller File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/receipt_controller.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file money_controller.vhd
+    Info (12022): Found design unit 1: money_controller-Behavior File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 30
+    Info (12023): Found entity 1: money_controller File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 4
+Info (12127): Elaborating entity "money_controller" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(15): used implicit default value for signal "stock0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(16): used implicit default value for signal "stock1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(17): used implicit default value for signal "stock2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(18): used implicit default value for signal "stock3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(21): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at money_controller.vhd(22): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+Info (12128): Elaborating entity "receipt_controller" for hierarchy "receipt_controller:receipt_money" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 76
+Warning (10492): VHDL Process Statement warning at receipt_controller.vhd(21): signal "enable_controller" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/receipt_controller.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at receipt_controller.vhd(22): signal "resetn" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/receipt_controller.vhd Line: 22
+Info (12128): Elaborating entity "bin2hex" for hierarchy "bin2hex:hexse2" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 96
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "total_value[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
-    Warning (13410): Pin "total_value[7]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/stock_controller.vhd Line: 12
+    Warning (13410): Pin "stock0[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock0[7]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 15
+    Warning (13410): Pin "stock1[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock1[7]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 16
+    Warning (13410): Pin "stock2[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock2[7]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 17
+    Warning (13410): Pin "stock3[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "stock3[7]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 18
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 21
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 198 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "key2" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input_value[0]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[1]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[2]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[3]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[4]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[5]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[6]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+    Warning (15610): No output dependent on input pin "input_value[7]" File: /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/money_controller.vhd Line: 12
+Info (21057): Implemented 191 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 162 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 1185 megabytes
-    Info: Processing ended: Wed Jun 13 04:17:08 2018
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 103 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 1177 megabytes
+    Info: Processing ended: Wed Jun 13 11:01:50 2018
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:21
 
