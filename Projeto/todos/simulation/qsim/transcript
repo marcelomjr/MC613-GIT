@@ -1,0 +1,43 @@
+# do stock_component.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:05:32 on Jun 13,2018
+# vcom -work work stock_component.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package altera_lnsim_components
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity money_controller
+# -- Compiling architecture structure of money_controller
+# End time: 10:05:32 on Jun 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 10:05:32 on Jun 13,2018
+# vcom -work work receipt_controller.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity money_controller_vhd_vec_tst
+# -- Compiling architecture money_controller_arch of money_controller_vhd_vec_tst
+# End time: 10:05:32 on Jun 13,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.receipt_controller_vhd_vec_tst 
+# Start time: 10:05:32 on Jun 13,2018
+# ** Error: (vsim-3170) Could not find 'receipt_controller_vhd_vec_tst'.
+#         Searched libraries:
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/cyclonev
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/altera
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/altera_mf
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/220model
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/sgate
+#             /opt/altera/17.1/modelsim_ase/altera/vhdl/altera_lnsim
+#             /home/ec2014/ra156531/disciplinas/MC613/MC613-GIT/Projeto/ItemCounter/simulation/qsim/work
+# Error loading design
+# End time: 10:05:33 on Jun 13,2018, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
