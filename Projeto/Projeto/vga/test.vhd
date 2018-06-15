@@ -132,7 +132,7 @@ BEGIN
 			normal_video_address <= 0;
 			normal_video_word <= "000";
 		ELSIF (rising_edge(slow_clock)) THEN
-				normal_video_address <= normal_video_address + 1;
+				normal_video_address <= 120;
 				normal_video_word <= "001";
 		END IF;	
 	END PROCESS;
